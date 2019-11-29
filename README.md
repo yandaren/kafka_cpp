@@ -2,7 +2,7 @@
 a kafka cpp wrapper of librdkafka
 
 ---
-> librdkafka是个非常优秀的c/c++的kafka client，但是笔者本人使用起来，感觉接口层面还是可以更简单点，故而基于librdkafka写个个cpp wrapper, 使得用户使用起来更加方便，接口更加简单友好, 下面简单描述下封装好的接口
+> librdkafka是个非常优秀的c/c++的kafka client，但是笔者本人使用起来，感觉接口层面还是可以更简单点，故而基于librdkafka写个cpp wrapper, 使得用户使用起来更加方便，接口更加简单友好, 下面简单描述下封装好的接口
 
 ### 1. topic消费者 kafka_consumer
 
@@ -47,7 +47,7 @@ a kafka cpp wrapper of librdkafka
     };
 ```
 
-我们需要重载kafka_consumer_event_handler， 然后重写相应的事件函数, 注意是实现 "on_consume_msg(RdKafka::Message* message)" 接口， 这个是表示收到了kafka的消息
+我们需要重载kafka_consumer_event_handler， 然后重写相应的事件函数, 主要是实现 "on_consume_msg(RdKafka::Message* message)" 接口， 这个是表示收到了kafka的消息
 
 #### 1.2 消费者接口
 ```
